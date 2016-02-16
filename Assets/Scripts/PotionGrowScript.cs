@@ -22,7 +22,7 @@ public class PotionGrowScript : MonoBehaviour
         {
             C.transform.localScale *= 2f;
             GameObject.Destroy(gameObject);
-            AudSource.audio.Play();
+            AudSource.GetComponent<AudioSource>().Play();
         }
 
     }

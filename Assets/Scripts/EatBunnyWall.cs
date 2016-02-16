@@ -15,18 +15,18 @@ public class EatBunnyWall : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-        if (AudApproach.audio.volume != 1)
-            AudApproach.audio.volume += 0.01F;
+        if (AudApproach.GetComponent<AudioSource>().volume != 1)
+            AudApproach.GetComponent<AudioSource>().volume += 0.01F;
 	}
 
 	
 
     void OnTriggerEnter(Collider C)
     {
-        AudApproach.audio.volume = 0F;
+        AudApproach.GetComponent<AudioSource>().volume = 0F;
     	Global.ShowEatBunny = true;
-        AudApproach.audio.Play();
-        AudApproach.audio.volume = 0F;
+        AudApproach.GetComponent<AudioSource>().Play();
+        AudApproach.GetComponent<AudioSource>().volume = 0F;
     }
 
     bool EatenHasPlayed = false;
@@ -39,8 +39,8 @@ public class EatBunnyWall : MonoBehaviour
     	}
     	else if (Global.canOpenGates && !EatenHasPlayed)
     	{
-    		AudApproach.audio.Stop();
-            AudEaten.audio.Play();
+    		AudApproach.GetComponent<AudioSource>().Stop();
+            AudEaten.GetComponent<AudioSource>().Play();
             EatenHasPlayed = true;
     	}
     }

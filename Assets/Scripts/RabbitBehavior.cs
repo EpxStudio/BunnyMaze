@@ -21,6 +21,6 @@ public class RabbitBehavior : MonoBehaviour
     {
         Global.Bunnies++;
         GameObject.Destroy(gameObject);
-        AudSource.audio.Play();
+        AudSource.GetComponent<AudioSource>().Play();
     }
 }

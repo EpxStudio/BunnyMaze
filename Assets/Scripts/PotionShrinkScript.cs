@@ -22,7 +22,7 @@ public class PotionShrinkScript : MonoBehaviour
         {
             C.transform.localScale *= .5f;
             GameObject.Destroy(gameObject);
-            AudSource.audio.Play();
+            AudSource.GetComponent<AudioSource>().Play();
         }
 
     }
